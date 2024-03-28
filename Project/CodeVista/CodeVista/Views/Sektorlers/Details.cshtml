@@ -1,0 +1,49 @@
+﻿@model CodeVista.Models.Sektorler
+@Scripts.Render("~/Layout/jquery")
+@Styles.Render("~/Layout/css")
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <h4>Sektorler</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SektorAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SektorAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.resim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.resim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Diller1.DilAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diller1.DilAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resimler.Yol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resimler.Yol)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SektorİD }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,58 @@
+﻿@model CodeVista.Models.Kaynaklar
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Kaynaklar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KaynakAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KaynakAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KaynakTipi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KaynakTipi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KullaniciSeviyeleri.SeviyeAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KullaniciSeviyeleri.SeviyeAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kurslar.KursAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kurslar.KursAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resimler.Yol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resimler.Yol)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.KaynakİD }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

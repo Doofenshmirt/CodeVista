@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="69447aac00014a98b69ccf6223e4475f" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="CodeVistaModel.APİEntegrasyon" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.Basarilar" Width="1.5" PointX="7.5" PointY="44.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.Bloglar" Width="1.5" PointX="7.5" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.CalismaGruplari" Width="1.5" PointX="5.25" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.DilKonulari" Width="1.5" PointX="8.25" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.Diller" Width="1.5" PointX="3" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.EgitimKaynaklari" Width="1.5" PointX="5.25" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.İndirimKuponlari" Width="1.5" PointX="3" PointY="34.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.Kategoriler" Width="1.5" PointX="3" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.Kaynaklar" Width="1.5" PointX="13.5" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.Konular" Width="1.5" PointX="13.5" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.KullaniciEtkilesimleri" Width="1.5" PointX="15.75" PointY="40.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.KullaniciFavorileri" Width="1.5" PointX="7.5" PointY="40.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.KullaniciGeriBildirimleri" Width="1.5" PointX="7.5" PointY="47.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.Kullaniciİstatistikleri" Width="1.5" PointX="10.5" PointY="41.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.Kullanicilar" Width="1.5" PointX="5.25" PointY="43.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.KullaniciProfili" Width="1.5" PointX="10.5" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.KullaniciSeviyeleri" Width="1.5" PointX="3" PointY="44" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.Kurslar" Width="1.5" PointX="5.25" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.ProjeOdevTakip" Width="1.5" PointX="13.5" PointY="40.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.Referanslar" Width="1.5" PointX="8.25" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.Resimler" Width="1.5" PointX="0.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.Sektorler" Width="1.5" PointX="11.25" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.Sertifikalar" Width="1.5" PointX="7.5" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.SoruCevap" Width="1.5" PointX="5.25" PointY="54.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.Yoneticiler" Width="1.5" PointX="3" PointY="48.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CodeVistaModel.Yorumlar" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="CodeVistaModel.FK_Basarilar_Kullanicilar" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Basarilar_Sertifikalar" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Bloglar_Kullanicilar" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Bloglar_Resimler" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_CalismaGruplari_Diller" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_CalismaGruplari_Konular" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_DilKonulari_Diller" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_DilKonulari_Konular" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_DilKonulari_Sektorler" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Diller_Resimler" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Diller_Resimler1" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Diller_Sektorler" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_EgitimKaynaklari_Diller" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Kullaniciİstatistikleri_Diller" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Kurslar_Diller" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Referanslar_Diller" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Sektorler_Diller" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_SoruCevap_Diller" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_EgitimKaynaklari_Kategoriler" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_KullaniciFavorileri_EgitimKaynaklari" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_İndirimKuponlari_Resimler" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Kategoriler_Kategoriler" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Kaynaklar_KullaniciSeviyeleri" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Kaynaklar_Kurslar" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Kaynaklar_Resimler" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_KullaniciEtkilesimleri_Kaynaklar" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_KullaniciEtkilesimleri_Kaynaklar1" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Konular_Resimler" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Konular_Sektorler" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Kullaniciİstatistikleri_Konular" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Kurslar_Konular" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_KullaniciEtkilesimleri_Kullanicilar" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_KullaniciFavorileri_Kullanicilar" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_KullaniciGeriBildirimleri_Kullanicilar" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Kullaniciİstatistikleri_Kullanicilar" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Kullaniciİstatistikleri_KullaniciSeviyeleri" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Kullanicilar_KullaniciSeviyeleri" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_KullaniciProfili_Kullanicilar_KullaniciİD" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_ProjeOdevTakip_Kullanicilar" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Sertifikalar_Kullanicilar" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_KullaniciProfili_Resimler" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_KullaniciSeviyeleri_Resimler" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Kurslar_Resimler" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_ProjeOdevTakip_Kurslar" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Referanslar_Resimler" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Sektorler_Resimler" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Sertifikalar_Resimler" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Yoneticiler_Resimler" ManuallyRouted="false" />
+        <AssociationConnector Association="CodeVistaModel.FK_Yorumlar_Kullanicilar_Yorumlar" />
+        <AssociationConnector Association="CodeVistaModel.FK_Sayac_Kaynaklar" />
+        <EntityTypeShape EntityType="CodeVistaModel.Sayac" Width="1.5" PointX="15.75" PointY="36.875" />
+        <AssociationConnector Association="CodeVistaModel.FK_Sayac_Kaynaklar1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

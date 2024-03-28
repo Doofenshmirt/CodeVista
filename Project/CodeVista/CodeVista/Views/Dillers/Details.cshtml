@@ -1,0 +1,72 @@
+﻿@model CodeVista.Models.Diller
+@Scripts.Render("~/Layout/jquery")
+@Styles.Render("~/Layout/css")
+@{
+    ViewBag.Title = "Details";
+}
+<div>
+    <h4>Diller</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DilAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DilAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DilTipi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DilTipi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.resim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.resim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DilKonulari.DilAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DilKonulari.DilAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resimler.Yol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resimler.Yol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resimler1.Yol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resimler1.Yol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sektorler.SektorAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sektorler.SektorAdi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DilİD }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

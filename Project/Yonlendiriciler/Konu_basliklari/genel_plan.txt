@@ -1,0 +1,114 @@
+Ana Sayfa ve Giriş:
+Projenizin tanıtımı ve kullanıcılara hoş geldiniz mesajı.
+Kullanıcılardan giriş yapmalarını veya kayıt olmalarını sağlayan bir giriş ekranı.
+
+Dil Kategorileri:
+Programlama dilleri kategoriler halinde sıralanmış bir sayfa.
+Her dilin kısa bir tanımı ve popülerliği.
+
+Dil Detay Sayfası:
+Seçilen dilin detaylı bilgileri, popülerlik oranı ve ne tür projelerde kullanıldığı.
+Dilin öğrenilmesi için başlangıç noktası ve kaynak önerileri.
+
+Referanslar:
+Her dil için döküman, video, fotoğraf ve ders içeren referans sayfalar.
+Bu kaynakların kullanıcılara nasıl fayda sağlayabileceği hakkında açıklamalar.
+
+Uzmanlık Alanları:
+Kullanıcıların ilgilendikleri uzmanlık alanlarını seçebilecekleri bir sayfa.
+Her alanın tanımı ve bu alanda ilerlemek için öneriler.
+
+Kullanıcı Profili:
+Kullanıcıların profillerini düzenleyebileceği ve seçtikleri uzmanlık alanlarını görebileceği bir sayfa.
+Kullanıcıların ilgilendikleri alanlara özel öneriler.
+
+Yönetici Paneli:
+Yönetici girişi için ayrı bir sayfa.
+Yeni dil ekleme, güncelleme veya silme yetenekleri.
+Kullanıcı profillerini düzenleme ve silme yetenekleri.
+
+Algoritma ve Veritabanı Bilgilendirmesi:
+Kullanıcılara algoritma ve veritabanı konularında bilgilendirici içerikler sunulan bir sayfa.
+Bu konularda temel bilgiler ve kaynak önerileri.
+
+Kariyer Planlama:
+Kullanıcılara kariyer planlamalarında yardımcı olacak bir sayfa.
+Belirli bir alanda kariyer yapmak isteyenler için öneriler ve adımlar.
+
+İletişim ve Geri Bildirim:
+Kullanıcıların site yönetimine geri bildirimde bulunabileceği bir iletişim formu.
+Sorular, öneriler ve şikayetler için bir geri bildirim mekanizması.
+
+
+
+Bootcamp Kategorileri:
+Yazılım geliştirme, veri bilimi, yapay zeka gibi farklı kategorilerdeki bootcampları listeleme.
+Her kategoriye genel bir açıklama ve bu alanda kariyer yapmak isteyenlere yönelik bilgiler.
+
+Bootcamp Detayları:
+Her bootcamp için detaylı bilgileri içeren bir sayfa.
+Süre, içerik, öğretmenler, sertifika olanakları gibi bilgiler.
+Kullanıcıların yorumlarını ve değerlendirmelerini gösterme.
+
+Bootcamp Fırsatları:
+İndirimler, ücretsiz deneme süreleri gibi fırsatları listeleyen bir sayfa.
+Kullanıcılara özel kampanyalar ve avantajlar.
+
+Kullanıcı Yorumları:
+Kullanıcıların bootcamplar hakkında yaptığı yorumları ve değerlendirmeleri içeren bir bölüm.
+Yorumlara verilen yanıtlar ve düzenli güncellemeler.
+
+Bootcamp İncelemeleri:
+Bağımsız incelemeleri içeren bir sayfa.
+Uzman görüşleri ve bootcampı daha iyi anlamak için kaynaklar.
+
+Kariyer Rehberi:
+Bootcampların kariyerinize nasıl katkı sağlayabileceği hakkında bilgiler.
+Bootcamp bitirenlerin kariyer hikayeleri ve başarı öyküleri.
+
+Ücret ve Ödeme Seçenekleri:
+Bootcampların ücretleri ve ödeme seçenekleri hakkında bilgiler.
+Farklı bütçelere uygun seçenekler.
+
+Kayıt ve Başvuru:
+Kullanıcıların doğrudan bootcamplara kayıt olabilecekleri bir bağlantı veya form.
+Başvuru süreci ve gereken belgeler hakkında bilgiler.
+
+Kampanyalar ve İndirimler:
+Kullanıcılara özel indirimler ve kampanyaları içeren bir sayfa.
+Dönemsel veya özel gün indirimleri.
+
+İletişim ve Destek:
+Kullanıcıların sorularını sormak ve destek almak için bir iletişim formu.
+Hızlı yanıt ve canlı destek seçenekleri.
+
+Temel Seviye Eğitimler:
+
+Temel bilgiye sahip olmayanlar için yazılım dünyasına giriş.
+Temel programlama kavramları ve ilk adımlar.
+İlk proje geliştirme.
+
+Orta Seviye Eğitimler:
+İleri düzey programlama konuları.
+Proje geliştirme ve uygulama.
+Veritabanı yönetimi ve optimizasyon.
+
+İleri Seviye Eğitimler:
+Büyük ölçekli uygulama geliştirme.
+Güvenlik konuları ve önlemler.
+Performans iyileştirmeleri ve optimizasyonlar.
+
+Yazılım Mimarisi ve Tasarım:
+Modüler programlama ve tasarım prensipleri.
+Mimari desenler ve uygulamaları.
+Çözümleme ve tasarım uygulamaları.
+
+Gelişmiş Teknolojiler:
+Yapay zeka ve makine öğrenmesi konuları.
+Bulut bilişim ve serverless teknolojiler.
+Yeni ve gelişen teknolojilere dair eğitimler.
+
+Junior Yazılımcı Kariyer Rehberi:
+Junior yazılımcıların kariyerlerini nasıl ilerletebilecekleri hakkında rehberlik.
+Projelerde liderlik ve ekip yönetimi becerileri.
+Kariyer hedeflerine ulaşmak için adımlar.

@@ -1,0 +1,140 @@
+﻿@*@model IEnumerable<CodeVista.Models.Kaynaklar>
+    @Scripts.Render("~/Layout/jquery")
+    @Styles.Render("~/Layout/css")
+    <!-- Bootstrap kart bileşenlerini kullanarak kaynakları göstermek için bir konteyner -->
+    <div class="container">
+        <div class="row">
+            <!-- Her bir kaynak için döngü başlatılıyor -->
+            @foreach (var kaynak in Model)
+            {
+                <!-- Her kartın bulunacağı sütun belirleniyor -->
+                <div class="col-md-4 mb-4">
+                    <!-- Kart bileşeni başlangıcı -->
+                    <div class="card h-100">
+                        <!-- Kart gövdesi -->
+                        <div class="card-body">
+                            <!-- Kaynağın başlığı -->
+                            <h5 class="card-title">@kaynak.KullaniciSeviyeleri.SeviyeAdi</h5>
+                            <!-- Kaynağın tipi veya kısa açıklaması -->
+                            <p class="card-text">@kaynak.KaynakTipi</p>
+                        </div>
+                        <!-- Kart alt kısmı (footer) -->
+                        <div class="card-footer">
+                            <!-- Kaynağa gitmek için bir bağlantı -->
+                            <a href="@kaynak.KaynakAdi" class="btn btn-primary stretched-link" target="_blank">Kaynağa Git</a>
+                        </div>
+                    </div>
+                    <!-- Kart bileşeni bitişi -->
+                </div>
+            }
+        </div>
+    </div>
+*@
+@model IEnumerable<CodeVista.Models.Kaynaklar>
+@Scripts.Render("~/Layout/jquery")
+@Styles.Render("~/Layout/css")
+<div class="container">
+    @*<div>
+            <form id="filterForm">
+                <label for="dateFilter">Tarih:</label>
+                <select id="dateFilter">
+                    <option value="recent">En Yeniden Eskiye</option>
+                    <option value="oldest">En Eskiden Yeniye</option>
+                </select>
+            </form>
+            <form id="sortForm">
+                <label for="sortType">Sırala:</label>
+                <select id="sortType">
+                    <option value="alphabetical">Alfabetik</option>
+                    <option value="popularity">Popülerlik</option>
+                </select>
+            </form>
+        </div>
+    *@
+    <div class="row">
+        @foreach (var kaynak in Model)
+        {
+            <!-- Her bir kaynak için bir kart oluşturuluyor -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <!-- Kaynağın başlığı gösteriliyor -->
+                        <h5 class="card-title">@kaynak.KullaniciSeviyeleri.SeviyeAdi</h5>
+                        <!-- Kaynağın tipi veya kısa açıklaması gösteriliyor -->
+                        <p class="card-text">@kaynak.KaynakTipi</p>
+                    </div>
+                    <div class="card-footer">
+                        <!-- Kullanıcıların tıklama sayısını göstermek için sayaç eklendi -->
+                        <div>
+                            <!-- Her bir kaynak için bir sayaç oluşturuluyor -->
+                            <span id="counter_@kaynak.KaynakİD">0</span> kişi bu kaynağa baktı
+                        </div>
+                        <!-- "Kaynağa Git" butonu ve tıklama sayısını artıran JavaScript fonksiyonu -->
+                        <a href="@kaynak.KaynakAdi" class="btn btn-primary stretched-link" target="_blank" onclick="incrementCounterAndSave(@kaynak.KaynakİD)">Kaynağa Git</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@section Scripts {
+    <!-- Tıklama sayısını artıran JavaScript fonksiyonu -->
+    <script>
+        function incrementCounterAndSave(kaynakİD) {
+            var counterElement = $("#counter_" + kaynakİD);
+            var currentCount = parseInt(counterElement.text());
+            var newCount = currentCount + 1;
+            counterElement.text(newCount);
+
+            // Ziyaret sayısını localStorage'da sakla
+            localStorage.setItem("ziyaret_" + kaynakİD, newCount);
+
+            // AJAX isteği yapmadan sadece sayaçı artırdığımız için bu kısmı kaldırabiliriz
+        }
+        $(document).ready(function () {
+            // Sayfa yüklendiğinde, localStorage'dan ziyaret sayılarını yükle
+            $("span[id^='counter_']").each(function () {
+                var kaynakID = $(this).attr("id").replace("counter_", "");
+                var ziyaretSayisi = localStorage.getItem("ziyaret_" + kaynakID);
+                if (ziyaretSayisi !== null) {
+                    $(this).text(ziyaretSayisi);
+                }
+            });
+        });
+       @* function incrementCounterAndSave(kaynakİD) {
+            var counterElement = $("#counter_" + kaynakİD);
+            var currentCount = parseInt(counterElement.text());
+            var newCount = currentCount + 1;
+            counterElement.text(newCount);
+
+            // AJAX ile ziyaret sayısını güncelle
+            $.ajax({
+                url: "/Kaynaklars/IncrementVisitCount", // Yeni oluşturduğumuz Action'a yönlendiriyoruz
+                type: "POST",
+                data: { id: kaynakİD },
+                success: function (data) {
+                    console.log("Ziyaret sayısı güncellendi.");
+                },
+                error: function (xhr, status, error) {
+                    console.error("Ziyaret sayısı güncellenirken bir hata oluştu: " + error);
+                }
+            });
+        }*@
+    </script>
+    @*<script>
+            // Kullanıcının seçimlerine göre kaynakları filtreleme ve sıralama işlemlerini gerçekleştiren fonksiyon
+            function updateResources() {
+                var dateFilter = $("#dateFilter").val();
+                var sortType = $("#sortType").val();
+
+                // Filtre ve sıralama işlemlerini gerçekleştir...
+                // Örneğin, AJAX isteği göndererek uygun kaynakları yeniden yükle...
+            }
+
+            // Filtreleme ve sıralama seçenekleri değiştiğinde updateResources fonksiyonunu çağır
+            $("#filterForm, #sortForm").change(function () {
+                updateResources();
+            });
+        </script>
+    *@
+}

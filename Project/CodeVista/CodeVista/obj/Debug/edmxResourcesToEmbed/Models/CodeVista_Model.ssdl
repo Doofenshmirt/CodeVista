@@ -1,0 +1,1142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CodeVistaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="APİEntegrasyon">
+    <Key>
+      <PropertyRef Name="APİİstekİD" />
+    </Key>
+    <Property Name="APİİstekİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="APİAdi" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="İstekTuru" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="İstekParametreleri" Type="text" Nullable="false" />
+    <Property Name="İstekZamani" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Basarilar">
+    <Key>
+      <PropertyRef Name="BasariİD" />
+    </Key>
+    <Property Name="BasariİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciİD" Type="int" Nullable="false" />
+    <Property Name="SertifikaİD" Type="int" Nullable="false" />
+    <Property Name="BasariTarihi" Type="date" Nullable="false" />
+    <Property Name="Açıklama" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bloglar">
+    <Key>
+      <PropertyRef Name="BlogİD" />
+    </Key>
+    <Property Name="BlogİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciİD" Type="int" Nullable="false" />
+    <Property Name="Baslik" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="İcerik" Type="text" Nullable="false" />
+    <Property Name="YayinlanmaTarihi" Type="date" Nullable="false" />
+    <Property Name="Etiketler" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="ResimID" Type="int" />
+  </EntityType>
+  <EntityType Name="CalismaGruplari">
+    <Key>
+      <PropertyRef Name="GrupİD" />
+    </Key>
+    <Property Name="GrupİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GrupAdi" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="KonuİD" Type="int" Nullable="false" />
+    <Property Name="DilİD" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DilKonulari">
+    <Key>
+      <PropertyRef Name="DilİD" />
+    </Key>
+    <Property Name="DilİD" Type="int" Nullable="false" />
+    <Property Name="KonuİD" Type="int" Nullable="false" />
+    <Property Name="DilAdi" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="KullanimAlani" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="SektorİD" Type="int" Nullable="false" />
+    <Property Name="Amac" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="PopulerlikDerecesi" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Diller">
+    <Key>
+      <PropertyRef Name="DilİD" />
+    </Key>
+    <Property Name="DilİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DilAdi" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="DilTipi" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SektorİD" Type="int" Nullable="false" />
+    <Property Name="ResimID" Type="int" />
+    <Property Name="resim" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="EgitimKaynaklari">
+    <Key>
+      <PropertyRef Name="KaynakİD" />
+    </Key>
+    <Property Name="KaynakİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KaynakAdi" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="KategoriİD" Type="int" Nullable="false" />
+    <Property Name="DilİD" Type="int" Nullable="false" />
+    <Property Name="Seviye" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="İndirimKuponlari">
+    <Key>
+      <PropertyRef Name="KuponİD" />
+    </Key>
+    <Property Name="KuponİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KuponKodu" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="İndirimYuzdesi" Type="int" Nullable="false" />
+    <Property Name="SonKullanmaTarihi" Type="date" Nullable="false" />
+    <Property Name="Aciklama" Type="text" />
+    <Property Name="ResimID" Type="int" />
+  </EntityType>
+  <EntityType Name="Kategoriler">
+    <Key>
+      <PropertyRef Name="KategoriİD" />
+    </Key>
+    <Property Name="KategoriİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KategoriAdi" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="AnaKategoriİD" Type="int" />
+    <Property Name="ResimID" Type="int" />
+    <Property Name="resim" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Kaynaklar">
+    <Key>
+      <PropertyRef Name="KaynakİD" />
+    </Key>
+    <Property Name="KaynakİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KaynakAdi" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="KaynakTipi" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="KursİD" Type="int" Nullable="false" />
+    <Property Name="SeviyeİD" Type="int" Nullable="false" />
+    <Property Name="ResimID" Type="int" />
+  </EntityType>
+  <EntityType Name="Konular">
+    <Key>
+      <PropertyRef Name="KonuİD" />
+    </Key>
+    <Property Name="KonuİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KonuAdi" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="KonuAciklama" Type="text" Nullable="false" />
+    <Property Name="KonuTipi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ResimID" Type="int" />
+    <Property Name="SektorID" Type="int" />
+  </EntityType>
+  <EntityType Name="KullaniciEtkilesimleri">
+    <Key>
+      <PropertyRef Name="EtkilesimİD" />
+    </Key>
+    <Property Name="EtkilesimİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciİD" Type="int" Nullable="false" />
+    <Property Name="KaynakİD" Type="int" Nullable="false" />
+    <Property Name="EtkilesimTipi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ZamanDamgasi" Type="datetime" Nullable="false" />
+    <Property Name="GeriBildirim" Type="text" />
+  </EntityType>
+  <EntityType Name="KullaniciFavorileri">
+    <Key>
+      <PropertyRef Name="FavoriİD" />
+    </Key>
+    <Property Name="FavoriİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciİD" Type="int" Nullable="false" />
+    <Property Name="KaynakİD" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KullaniciGeriBildirimleri">
+    <Key>
+      <PropertyRef Name="GeriBildirimİD" />
+    </Key>
+    <Property Name="GeriBildirimİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciİD" Type="int" Nullable="false" />
+    <Property Name="GeriBildirimTuru" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GeriBildirimİcerigi" Type="text" Nullable="false" />
+    <Property Name="GeriBildirimZamani" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kullaniciİstatistikleri">
+    <Key>
+      <PropertyRef Name="İstatistikİD" />
+    </Key>
+    <Property Name="İstatistikİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciİD" Type="int" Nullable="false" />
+    <Property Name="DilİD" Type="int" Nullable="false" />
+    <Property Name="KonuİD" Type="int" Nullable="false" />
+    <Property Name="SeviyeİD" Type="int" Nullable="false" />
+    <Property Name="İlerlemeYuzdesi" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kullanicilar">
+    <Key>
+      <PropertyRef Name="KullaniciİD" />
+    </Key>
+    <Property Name="KullaniciİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="HashlenmisSifre" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="SeviyeİD" Type="int" Nullable="false" />
+    <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Soyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="KullaniciRolu" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KullaniciProfili">
+    <Key>
+      <PropertyRef Name="KullaniciAdi" />
+    </Key>
+    <Property Name="KullaniciİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="TercihEdilenDil" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProfilResmiURL" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Cinsiyet" Type="bit" Nullable="false" />
+    <Property Name="DogumTarihi" Type="date" Nullable="false" />
+    <Property Name="Ulke" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Sehir" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="İlgiAlanlari" Type="text" Nullable="false" />
+    <Property Name="KullaniciRolu" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="KayitTarihi" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="SonGirisTarihi" Type="datetime" Nullable="false" />
+    <Property Name="ProfilTamamlamaDurumu" Type="bit" Nullable="false" />
+    <Property Name="SosyelMedyaHesaplari" Type="text" />
+    <Property Name="İletisimBilgileri" Type="text" />
+    <Property Name="OdemeBilgileri" Type="text" />
+    <Property Name="SeviyeİD" Type="int" Nullable="false" />
+    <Property Name="ResimID" Type="int" />
+  </EntityType>
+  <EntityType Name="KullaniciSeviyeleri">
+    <Key>
+      <PropertyRef Name="SeviyeİD" />
+    </Key>
+    <Property Name="SeviyeİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SeviyeAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SeviyeAciklama" Type="text" Nullable="false" />
+    <Property Name="ResimID" Type="int" />
+  </EntityType>
+  <EntityType Name="Kurslar">
+    <Key>
+      <PropertyRef Name="KursİD" />
+    </Key>
+    <Property Name="KursİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KursAdi" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="DilİD" Type="int" Nullable="false" />
+    <Property Name="KonuİD" Type="int" Nullable="false" />
+    <Property Name="KursSeviyesi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="KursAciklama" Type="text" Nullable="false" />
+    <Property Name="ResimID" Type="int" />
+    <Property Name="resim" Type="image" />
+  </EntityType>
+  <EntityType Name="ProjeOdevTakip">
+    <Key>
+      <PropertyRef Name="ProjeOdevİD" />
+    </Key>
+    <Property Name="ProjeOdevİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciİD" Type="int" Nullable="false" />
+    <Property Name="KursİD" Type="int" Nullable="false" />
+    <Property Name="SonTarih" Type="date" Nullable="false" />
+    <Property Name="İlerlemeYuzdesi" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Referanslar">
+    <Key>
+      <PropertyRef Name="ReferansİD" />
+    </Key>
+    <Property Name="ReferansİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReferansAdi" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="ReferansTipi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DilİD" Type="int" Nullable="false" />
+    <Property Name="ResimID" Type="int" />
+  </EntityType>
+  <EntityType Name="Resimler">
+    <Key>
+      <PropertyRef Name="ResimID" />
+    </Key>
+    <Property Name="ResimID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Yol" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Boyut" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sayac">
+    <Key>
+      <PropertyRef Name="SayacİD" />
+    </Key>
+    <Property Name="KaynakID" Type="int" />
+    <Property Name="BakilanSayi" Type="int" />
+    <Property Name="SayacİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sektorler">
+    <Key>
+      <PropertyRef Name="SektorID" />
+    </Key>
+    <Property Name="SektorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SektorAdi" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="PopulerYazilimDiliİD" Type="int" Nullable="false" />
+    <Property Name="ResimID" Type="int" />
+    <Property Name="resim" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Sertifikalar">
+    <Key>
+      <PropertyRef Name="SertifikaİD" />
+    </Key>
+    <Property Name="SertifikaİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SertifikaAdi" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="VerenKurulus" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="VerilisTarihi" Type="date" Nullable="false" />
+    <Property Name="KullaniciİD" Type="int" Nullable="false" />
+    <Property Name="ResimID" Type="int" />
+  </EntityType>
+  <EntityType Name="SoruCevap">
+    <Key>
+      <PropertyRef Name="SoruCevapİD" />
+    </Key>
+    <Property Name="SoruCevapİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Soru" Type="text" />
+    <Property Name="Cevap" Type="text" />
+    <Property Name="DilİD" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Yoneticiler">
+    <Key>
+      <PropertyRef Name="YoneticiİD" />
+    </Key>
+    <Property Name="YoneticiİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="YoneticiAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="YoneticiEmail" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="YoneticiSifreHash" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="ResimID" Type="int" />
+  </EntityType>
+  <EntityType Name="Yorumlar">
+    <Key>
+      <PropertyRef Name="YorumİD" />
+    </Key>
+    <Property Name="YorumİD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciİD" Type="int" Nullable="false" />
+    <Property Name="KaynakİD" Type="int" Nullable="false" />
+    <Property Name="YorumMetni" Type="nvarchar(max)" />
+    <Property Name="ZamanDamgasi" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Basarilar_Kullanicilar">
+    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="1" />
+    <End Role="Basarilar" Type="Self.Basarilar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="KullaniciİD" />
+      </Principal>
+      <Dependent Role="Basarilar">
+        <PropertyRef Name="KullaniciİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Basarilar_Sertifikalar">
+    <End Role="Sertifikalar" Type="Self.Sertifikalar" Multiplicity="1" />
+    <End Role="Basarilar" Type="Self.Basarilar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sertifikalar">
+        <PropertyRef Name="SertifikaİD" />
+      </Principal>
+      <Dependent Role="Basarilar">
+        <PropertyRef Name="SertifikaİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bloglar_Kullanicilar">
+    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="1" />
+    <End Role="Bloglar" Type="Self.Bloglar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="KullaniciİD" />
+      </Principal>
+      <Dependent Role="Bloglar">
+        <PropertyRef Name="KullaniciİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bloglar_Resimler">
+    <End Role="Resimler" Type="Self.Resimler" Multiplicity="0..1" />
+    <End Role="Bloglar" Type="Self.Bloglar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resimler">
+        <PropertyRef Name="ResimID" />
+      </Principal>
+      <Dependent Role="Bloglar">
+        <PropertyRef Name="ResimID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CalismaGruplari_Diller">
+    <End Role="Diller" Type="Self.Diller" Multiplicity="1" />
+    <End Role="CalismaGruplari" Type="Self.CalismaGruplari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Diller">
+        <PropertyRef Name="DilİD" />
+      </Principal>
+      <Dependent Role="CalismaGruplari">
+        <PropertyRef Name="DilİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CalismaGruplari_Konular">
+    <End Role="Konular" Type="Self.Konular" Multiplicity="1" />
+    <End Role="CalismaGruplari" Type="Self.CalismaGruplari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Konular">
+        <PropertyRef Name="KonuİD" />
+      </Principal>
+      <Dependent Role="CalismaGruplari">
+        <PropertyRef Name="KonuİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DilKonulari_Diller">
+    <End Role="Diller" Type="Self.Diller" Multiplicity="1" />
+    <End Role="DilKonulari" Type="Self.DilKonulari" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Diller">
+        <PropertyRef Name="DilİD" />
+      </Principal>
+      <Dependent Role="DilKonulari">
+        <PropertyRef Name="DilİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DilKonulari_Konular">
+    <End Role="Konular" Type="Self.Konular" Multiplicity="1" />
+    <End Role="DilKonulari" Type="Self.DilKonulari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Konular">
+        <PropertyRef Name="KonuİD" />
+      </Principal>
+      <Dependent Role="DilKonulari">
+        <PropertyRef Name="KonuİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DilKonulari_Sektorler">
+    <End Role="Sektorler" Type="Self.Sektorler" Multiplicity="1" />
+    <End Role="DilKonulari" Type="Self.DilKonulari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sektorler">
+        <PropertyRef Name="SektorID" />
+      </Principal>
+      <Dependent Role="DilKonulari">
+        <PropertyRef Name="SektorİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Diller_Resimler">
+    <End Role="Resimler" Type="Self.Resimler" Multiplicity="0..1" />
+    <End Role="Diller" Type="Self.Diller" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resimler">
+        <PropertyRef Name="ResimID" />
+      </Principal>
+      <Dependent Role="Diller">
+        <PropertyRef Name="ResimID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Diller_Resimler1">
+    <End Role="Resimler" Type="Self.Resimler" Multiplicity="0..1" />
+    <End Role="Diller" Type="Self.Diller" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resimler">
+        <PropertyRef Name="ResimID" />
+      </Principal>
+      <Dependent Role="Diller">
+        <PropertyRef Name="ResimID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Diller_Sektorler">
+    <End Role="Sektorler" Type="Self.Sektorler" Multiplicity="1" />
+    <End Role="Diller" Type="Self.Diller" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sektorler">
+        <PropertyRef Name="SektorID" />
+      </Principal>
+      <Dependent Role="Diller">
+        <PropertyRef Name="SektorİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EgitimKaynaklari_Diller">
+    <End Role="Diller" Type="Self.Diller" Multiplicity="1" />
+    <End Role="EgitimKaynaklari" Type="Self.EgitimKaynaklari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Diller">
+        <PropertyRef Name="DilİD" />
+      </Principal>
+      <Dependent Role="EgitimKaynaklari">
+        <PropertyRef Name="DilİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EgitimKaynaklari_Kategoriler">
+    <End Role="Kategoriler" Type="Self.Kategoriler" Multiplicity="1" />
+    <End Role="EgitimKaynaklari" Type="Self.EgitimKaynaklari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategoriler">
+        <PropertyRef Name="KategoriİD" />
+      </Principal>
+      <Dependent Role="EgitimKaynaklari">
+        <PropertyRef Name="KategoriİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_İndirimKuponlari_Resimler">
+    <End Role="Resimler" Type="Self.Resimler" Multiplicity="0..1" />
+    <End Role="İndirimKuponlari" Type="Self.İndirimKuponlari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resimler">
+        <PropertyRef Name="ResimID" />
+      </Principal>
+      <Dependent Role="İndirimKuponlari">
+        <PropertyRef Name="ResimID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kategoriler_Kategoriler">
+    <End Role="Kategoriler" Type="Self.Kategoriler" Multiplicity="0..1" />
+    <End Role="Kategoriler1" Type="Self.Kategoriler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategoriler">
+        <PropertyRef Name="KategoriİD" />
+      </Principal>
+      <Dependent Role="Kategoriler1">
+        <PropertyRef Name="AnaKategoriİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kaynaklar_KullaniciSeviyeleri">
+    <End Role="KullaniciSeviyeleri" Type="Self.KullaniciSeviyeleri" Multiplicity="1" />
+    <End Role="Kaynaklar" Type="Self.Kaynaklar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KullaniciSeviyeleri">
+        <PropertyRef Name="SeviyeİD" />
+      </Principal>
+      <Dependent Role="Kaynaklar">
+        <PropertyRef Name="SeviyeİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kaynaklar_Kurslar">
+    <End Role="Kurslar" Type="Self.Kurslar" Multiplicity="1" />
+    <End Role="Kaynaklar" Type="Self.Kaynaklar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kurslar">
+        <PropertyRef Name="KursİD" />
+      </Principal>
+      <Dependent Role="Kaynaklar">
+        <PropertyRef Name="KursİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kaynaklar_Resimler">
+    <End Role="Resimler" Type="Self.Resimler" Multiplicity="0..1" />
+    <End Role="Kaynaklar" Type="Self.Kaynaklar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resimler">
+        <PropertyRef Name="ResimID" />
+      </Principal>
+      <Dependent Role="Kaynaklar">
+        <PropertyRef Name="ResimID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Konular_Resimler">
+    <End Role="Resimler" Type="Self.Resimler" Multiplicity="0..1" />
+    <End Role="Konular" Type="Self.Konular" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resimler">
+        <PropertyRef Name="ResimID" />
+      </Principal>
+      <Dependent Role="Konular">
+        <PropertyRef Name="ResimID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Konular_Sektorler">
+    <End Role="Sektorler" Type="Self.Sektorler" Multiplicity="0..1" />
+    <End Role="Konular" Type="Self.Konular" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sektorler">
+        <PropertyRef Name="SektorID" />
+      </Principal>
+      <Dependent Role="Konular">
+        <PropertyRef Name="SektorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KullaniciEtkilesimleri_Kaynaklar">
+    <End Role="Kaynaklar" Type="Self.Kaynaklar" Multiplicity="1" />
+    <End Role="KullaniciEtkilesimleri" Type="Self.KullaniciEtkilesimleri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kaynaklar">
+        <PropertyRef Name="KaynakİD" />
+      </Principal>
+      <Dependent Role="KullaniciEtkilesimleri">
+        <PropertyRef Name="KaynakİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KullaniciEtkilesimleri_Kaynaklar1">
+    <End Role="Kaynaklar" Type="Self.Kaynaklar" Multiplicity="1" />
+    <End Role="KullaniciEtkilesimleri" Type="Self.KullaniciEtkilesimleri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kaynaklar">
+        <PropertyRef Name="KaynakİD" />
+      </Principal>
+      <Dependent Role="KullaniciEtkilesimleri">
+        <PropertyRef Name="KaynakİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KullaniciEtkilesimleri_Kullanicilar">
+    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="1" />
+    <End Role="KullaniciEtkilesimleri" Type="Self.KullaniciEtkilesimleri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="KullaniciİD" />
+      </Principal>
+      <Dependent Role="KullaniciEtkilesimleri">
+        <PropertyRef Name="KullaniciİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KullaniciFavorileri_EgitimKaynaklari">
+    <End Role="EgitimKaynaklari" Type="Self.EgitimKaynaklari" Multiplicity="1" />
+    <End Role="KullaniciFavorileri" Type="Self.KullaniciFavorileri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EgitimKaynaklari">
+        <PropertyRef Name="KaynakİD" />
+      </Principal>
+      <Dependent Role="KullaniciFavorileri">
+        <PropertyRef Name="KaynakİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KullaniciFavorileri_Kullanicilar">
+    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="1" />
+    <End Role="KullaniciFavorileri" Type="Self.KullaniciFavorileri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="KullaniciİD" />
+      </Principal>
+      <Dependent Role="KullaniciFavorileri">
+        <PropertyRef Name="KullaniciİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KullaniciGeriBildirimleri_Kullanicilar">
+    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="1" />
+    <End Role="KullaniciGeriBildirimleri" Type="Self.KullaniciGeriBildirimleri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="KullaniciİD" />
+      </Principal>
+      <Dependent Role="KullaniciGeriBildirimleri">
+        <PropertyRef Name="KullaniciİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kullaniciİstatistikleri_Diller">
+    <End Role="Diller" Type="Self.Diller" Multiplicity="1" />
+    <End Role="Kullaniciİstatistikleri" Type="Self.Kullaniciİstatistikleri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Diller">
+        <PropertyRef Name="DilİD" />
+      </Principal>
+      <Dependent Role="Kullaniciİstatistikleri">
+        <PropertyRef Name="DilİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kullaniciİstatistikleri_Konular">
+    <End Role="Konular" Type="Self.Konular" Multiplicity="1" />
+    <End Role="Kullaniciİstatistikleri" Type="Self.Kullaniciİstatistikleri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Konular">
+        <PropertyRef Name="KonuİD" />
+      </Principal>
+      <Dependent Role="Kullaniciİstatistikleri">
+        <PropertyRef Name="KonuİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kullaniciİstatistikleri_Kullanicilar">
+    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="1" />
+    <End Role="Kullaniciİstatistikleri" Type="Self.Kullaniciİstatistikleri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="KullaniciİD" />
+      </Principal>
+      <Dependent Role="Kullaniciİstatistikleri">
+        <PropertyRef Name="KullaniciİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kullaniciİstatistikleri_KullaniciSeviyeleri">
+    <End Role="KullaniciSeviyeleri" Type="Self.KullaniciSeviyeleri" Multiplicity="1" />
+    <End Role="Kullaniciİstatistikleri" Type="Self.Kullaniciİstatistikleri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KullaniciSeviyeleri">
+        <PropertyRef Name="SeviyeİD" />
+      </Principal>
+      <Dependent Role="Kullaniciİstatistikleri">
+        <PropertyRef Name="SeviyeİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kullanicilar_KullaniciSeviyeleri">
+    <End Role="KullaniciSeviyeleri" Type="Self.KullaniciSeviyeleri" Multiplicity="1" />
+    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KullaniciSeviyeleri">
+        <PropertyRef Name="SeviyeİD" />
+      </Principal>
+      <Dependent Role="Kullanicilar">
+        <PropertyRef Name="SeviyeİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_KullaniciProfili_Kullanicilar_Email' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_KullaniciProfili_Kullanicilar_Email" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_KullaniciProfili_Kullanicilar_KullaniciAdi' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_KullaniciProfili_Kullanicilar_KullaniciAdi" />-->
+  <Association Name="FK_KullaniciProfili_Kullanicilar_KullaniciİD">
+    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="1" />
+    <End Role="KullaniciProfili" Type="Self.KullaniciProfili" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="KullaniciİD" />
+      </Principal>
+      <Dependent Role="KullaniciProfili">
+        <PropertyRef Name="KullaniciİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KullaniciProfili_Resimler">
+    <End Role="Resimler" Type="Self.Resimler" Multiplicity="0..1" />
+    <End Role="KullaniciProfili" Type="Self.KullaniciProfili" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resimler">
+        <PropertyRef Name="ResimID" />
+      </Principal>
+      <Dependent Role="KullaniciProfili">
+        <PropertyRef Name="ResimID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KullaniciSeviyeleri_Resimler">
+    <End Role="Resimler" Type="Self.Resimler" Multiplicity="0..1" />
+    <End Role="KullaniciSeviyeleri" Type="Self.KullaniciSeviyeleri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resimler">
+        <PropertyRef Name="ResimID" />
+      </Principal>
+      <Dependent Role="KullaniciSeviyeleri">
+        <PropertyRef Name="ResimID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kurslar_Diller">
+    <End Role="Diller" Type="Self.Diller" Multiplicity="1" />
+    <End Role="Kurslar" Type="Self.Kurslar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Diller">
+        <PropertyRef Name="DilİD" />
+      </Principal>
+      <Dependent Role="Kurslar">
+        <PropertyRef Name="DilİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kurslar_Konular">
+    <End Role="Konular" Type="Self.Konular" Multiplicity="1" />
+    <End Role="Kurslar" Type="Self.Kurslar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Konular">
+        <PropertyRef Name="KonuİD" />
+      </Principal>
+      <Dependent Role="Kurslar">
+        <PropertyRef Name="KonuİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kurslar_Resimler">
+    <End Role="Resimler" Type="Self.Resimler" Multiplicity="0..1" />
+    <End Role="Kurslar" Type="Self.Kurslar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resimler">
+        <PropertyRef Name="ResimID" />
+      </Principal>
+      <Dependent Role="Kurslar">
+        <PropertyRef Name="ResimID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjeOdevTakip_Kullanicilar">
+    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="1" />
+    <End Role="ProjeOdevTakip" Type="Self.ProjeOdevTakip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="KullaniciİD" />
+      </Principal>
+      <Dependent Role="ProjeOdevTakip">
+        <PropertyRef Name="KullaniciİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProjeOdevTakip_Kurslar">
+    <End Role="Kurslar" Type="Self.Kurslar" Multiplicity="1" />
+    <End Role="ProjeOdevTakip" Type="Self.ProjeOdevTakip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kurslar">
+        <PropertyRef Name="KursİD" />
+      </Principal>
+      <Dependent Role="ProjeOdevTakip">
+        <PropertyRef Name="KursİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Referanslar_Diller">
+    <End Role="Diller" Type="Self.Diller" Multiplicity="1" />
+    <End Role="Referanslar" Type="Self.Referanslar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Diller">
+        <PropertyRef Name="DilİD" />
+      </Principal>
+      <Dependent Role="Referanslar">
+        <PropertyRef Name="DilİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Referanslar_Resimler">
+    <End Role="Resimler" Type="Self.Resimler" Multiplicity="0..1" />
+    <End Role="Referanslar" Type="Self.Referanslar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resimler">
+        <PropertyRef Name="ResimID" />
+      </Principal>
+      <Dependent Role="Referanslar">
+        <PropertyRef Name="ResimID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sayac_Kaynaklar1">
+    <End Role="Kaynaklar" Type="Self.Kaynaklar" Multiplicity="0..1" />
+    <End Role="Sayac" Type="Self.Sayac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kaynaklar">
+        <PropertyRef Name="KaynakİD" />
+      </Principal>
+      <Dependent Role="Sayac">
+        <PropertyRef Name="KaynakID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sektorler_Diller">
+    <End Role="Diller" Type="Self.Diller" Multiplicity="1" />
+    <End Role="Sektorler" Type="Self.Sektorler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Diller">
+        <PropertyRef Name="DilİD" />
+      </Principal>
+      <Dependent Role="Sektorler">
+        <PropertyRef Name="PopulerYazilimDiliİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sektorler_Resimler">
+    <End Role="Resimler" Type="Self.Resimler" Multiplicity="0..1" />
+    <End Role="Sektorler" Type="Self.Sektorler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resimler">
+        <PropertyRef Name="ResimID" />
+      </Principal>
+      <Dependent Role="Sektorler">
+        <PropertyRef Name="ResimID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sertifikalar_Kullanicilar">
+    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="1" />
+    <End Role="Sertifikalar" Type="Self.Sertifikalar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="KullaniciİD" />
+      </Principal>
+      <Dependent Role="Sertifikalar">
+        <PropertyRef Name="KullaniciİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sertifikalar_Resimler">
+    <End Role="Resimler" Type="Self.Resimler" Multiplicity="0..1" />
+    <End Role="Sertifikalar" Type="Self.Sertifikalar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resimler">
+        <PropertyRef Name="ResimID" />
+      </Principal>
+      <Dependent Role="Sertifikalar">
+        <PropertyRef Name="ResimID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SoruCevap_Diller">
+    <End Role="Diller" Type="Self.Diller" Multiplicity="1" />
+    <End Role="SoruCevap" Type="Self.SoruCevap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Diller">
+        <PropertyRef Name="DilİD" />
+      </Principal>
+      <Dependent Role="SoruCevap">
+        <PropertyRef Name="DilİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yoneticiler_Resimler">
+    <End Role="Resimler" Type="Self.Resimler" Multiplicity="0..1" />
+    <End Role="Yoneticiler" Type="Self.Yoneticiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resimler">
+        <PropertyRef Name="ResimID" />
+      </Principal>
+      <Dependent Role="Yoneticiler">
+        <PropertyRef Name="ResimID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yorumlar_Kullanicilar_Yorumlar">
+    <End Role="Kullanicilar" Type="Self.Kullanicilar" Multiplicity="1" />
+    <End Role="Yorumlar" Type="Self.Yorumlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="KullaniciİD" />
+      </Principal>
+      <Dependent Role="Yorumlar">
+        <PropertyRef Name="KullaniciİD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CodeVistaModelStoreContainer">
+    <EntitySet Name="APİEntegrasyon" EntityType="Self.APİEntegrasyon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Basarilar" EntityType="Self.Basarilar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bloglar" EntityType="Self.Bloglar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CalismaGruplari" EntityType="Self.CalismaGruplari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DilKonulari" EntityType="Self.DilKonulari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Diller" EntityType="Self.Diller" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EgitimKaynaklari" EntityType="Self.EgitimKaynaklari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="İndirimKuponlari" EntityType="Self.İndirimKuponlari" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kategoriler" EntityType="Self.Kategoriler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kaynaklar" EntityType="Self.Kaynaklar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Konular" EntityType="Self.Konular" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KullaniciEtkilesimleri" EntityType="Self.KullaniciEtkilesimleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KullaniciFavorileri" EntityType="Self.KullaniciFavorileri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KullaniciGeriBildirimleri" EntityType="Self.KullaniciGeriBildirimleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kullaniciİstatistikleri" EntityType="Self.Kullaniciİstatistikleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KullaniciProfili" EntityType="Self.KullaniciProfili" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KullaniciSeviyeleri" EntityType="Self.KullaniciSeviyeleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kurslar" EntityType="Self.Kurslar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjeOdevTakip" EntityType="Self.ProjeOdevTakip" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Referanslar" EntityType="Self.Referanslar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Resimler" EntityType="Self.Resimler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sayac" EntityType="Self.Sayac" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sektorler" EntityType="Self.Sektorler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sertifikalar" EntityType="Self.Sertifikalar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SoruCevap" EntityType="Self.SoruCevap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yoneticiler" EntityType="Self.Yoneticiler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yorumlar" EntityType="Self.Yorumlar" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Basarilar_Kullanicilar" Association="Self.FK_Basarilar_Kullanicilar">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="Basarilar" EntitySet="Basarilar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Basarilar_Sertifikalar" Association="Self.FK_Basarilar_Sertifikalar">
+      <End Role="Sertifikalar" EntitySet="Sertifikalar" />
+      <End Role="Basarilar" EntitySet="Basarilar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bloglar_Kullanicilar" Association="Self.FK_Bloglar_Kullanicilar">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="Bloglar" EntitySet="Bloglar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bloglar_Resimler" Association="Self.FK_Bloglar_Resimler">
+      <End Role="Resimler" EntitySet="Resimler" />
+      <End Role="Bloglar" EntitySet="Bloglar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CalismaGruplari_Diller" Association="Self.FK_CalismaGruplari_Diller">
+      <End Role="Diller" EntitySet="Diller" />
+      <End Role="CalismaGruplari" EntitySet="CalismaGruplari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CalismaGruplari_Konular" Association="Self.FK_CalismaGruplari_Konular">
+      <End Role="Konular" EntitySet="Konular" />
+      <End Role="CalismaGruplari" EntitySet="CalismaGruplari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DilKonulari_Diller" Association="Self.FK_DilKonulari_Diller">
+      <End Role="Diller" EntitySet="Diller" />
+      <End Role="DilKonulari" EntitySet="DilKonulari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DilKonulari_Konular" Association="Self.FK_DilKonulari_Konular">
+      <End Role="Konular" EntitySet="Konular" />
+      <End Role="DilKonulari" EntitySet="DilKonulari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DilKonulari_Sektorler" Association="Self.FK_DilKonulari_Sektorler">
+      <End Role="Sektorler" EntitySet="Sektorler" />
+      <End Role="DilKonulari" EntitySet="DilKonulari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Diller_Resimler" Association="Self.FK_Diller_Resimler">
+      <End Role="Resimler" EntitySet="Resimler" />
+      <End Role="Diller" EntitySet="Diller" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Diller_Resimler1" Association="Self.FK_Diller_Resimler1">
+      <End Role="Resimler" EntitySet="Resimler" />
+      <End Role="Diller" EntitySet="Diller" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Diller_Sektorler" Association="Self.FK_Diller_Sektorler">
+      <End Role="Sektorler" EntitySet="Sektorler" />
+      <End Role="Diller" EntitySet="Diller" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EgitimKaynaklari_Diller" Association="Self.FK_EgitimKaynaklari_Diller">
+      <End Role="Diller" EntitySet="Diller" />
+      <End Role="EgitimKaynaklari" EntitySet="EgitimKaynaklari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EgitimKaynaklari_Kategoriler" Association="Self.FK_EgitimKaynaklari_Kategoriler">
+      <End Role="Kategoriler" EntitySet="Kategoriler" />
+      <End Role="EgitimKaynaklari" EntitySet="EgitimKaynaklari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_İndirimKuponlari_Resimler" Association="Self.FK_İndirimKuponlari_Resimler">
+      <End Role="Resimler" EntitySet="Resimler" />
+      <End Role="İndirimKuponlari" EntitySet="İndirimKuponlari" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kategoriler_Kategoriler" Association="Self.FK_Kategoriler_Kategoriler">
+      <End Role="Kategoriler" EntitySet="Kategoriler" />
+      <End Role="Kategoriler1" EntitySet="Kategoriler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kaynaklar_KullaniciSeviyeleri" Association="Self.FK_Kaynaklar_KullaniciSeviyeleri">
+      <End Role="KullaniciSeviyeleri" EntitySet="KullaniciSeviyeleri" />
+      <End Role="Kaynaklar" EntitySet="Kaynaklar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kaynaklar_Kurslar" Association="Self.FK_Kaynaklar_Kurslar">
+      <End Role="Kurslar" EntitySet="Kurslar" />
+      <End Role="Kaynaklar" EntitySet="Kaynaklar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kaynaklar_Resimler" Association="Self.FK_Kaynaklar_Resimler">
+      <End Role="Resimler" EntitySet="Resimler" />
+      <End Role="Kaynaklar" EntitySet="Kaynaklar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Konular_Resimler" Association="Self.FK_Konular_Resimler">
+      <End Role="Resimler" EntitySet="Resimler" />
+      <End Role="Konular" EntitySet="Konular" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Konular_Sektorler" Association="Self.FK_Konular_Sektorler">
+      <End Role="Sektorler" EntitySet="Sektorler" />
+      <End Role="Konular" EntitySet="Konular" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KullaniciEtkilesimleri_Kaynaklar" Association="Self.FK_KullaniciEtkilesimleri_Kaynaklar">
+      <End Role="Kaynaklar" EntitySet="Kaynaklar" />
+      <End Role="KullaniciEtkilesimleri" EntitySet="KullaniciEtkilesimleri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KullaniciEtkilesimleri_Kaynaklar1" Association="Self.FK_KullaniciEtkilesimleri_Kaynaklar1">
+      <End Role="Kaynaklar" EntitySet="Kaynaklar" />
+      <End Role="KullaniciEtkilesimleri" EntitySet="KullaniciEtkilesimleri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KullaniciEtkilesimleri_Kullanicilar" Association="Self.FK_KullaniciEtkilesimleri_Kullanicilar">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="KullaniciEtkilesimleri" EntitySet="KullaniciEtkilesimleri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KullaniciFavorileri_EgitimKaynaklari" Association="Self.FK_KullaniciFavorileri_EgitimKaynaklari">
+      <End Role="EgitimKaynaklari" EntitySet="EgitimKaynaklari" />
+      <End Role="KullaniciFavorileri" EntitySet="KullaniciFavorileri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KullaniciFavorileri_Kullanicilar" Association="Self.FK_KullaniciFavorileri_Kullanicilar">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="KullaniciFavorileri" EntitySet="KullaniciFavorileri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KullaniciGeriBildirimleri_Kullanicilar" Association="Self.FK_KullaniciGeriBildirimleri_Kullanicilar">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="KullaniciGeriBildirimleri" EntitySet="KullaniciGeriBildirimleri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kullaniciİstatistikleri_Diller" Association="Self.FK_Kullaniciİstatistikleri_Diller">
+      <End Role="Diller" EntitySet="Diller" />
+      <End Role="Kullaniciİstatistikleri" EntitySet="Kullaniciİstatistikleri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kullaniciİstatistikleri_Konular" Association="Self.FK_Kullaniciİstatistikleri_Konular">
+      <End Role="Konular" EntitySet="Konular" />
+      <End Role="Kullaniciİstatistikleri" EntitySet="Kullaniciİstatistikleri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kullaniciİstatistikleri_Kullanicilar" Association="Self.FK_Kullaniciİstatistikleri_Kullanicilar">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="Kullaniciİstatistikleri" EntitySet="Kullaniciİstatistikleri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kullaniciİstatistikleri_KullaniciSeviyeleri" Association="Self.FK_Kullaniciİstatistikleri_KullaniciSeviyeleri">
+      <End Role="KullaniciSeviyeleri" EntitySet="KullaniciSeviyeleri" />
+      <End Role="Kullaniciİstatistikleri" EntitySet="Kullaniciİstatistikleri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kullanicilar_KullaniciSeviyeleri" Association="Self.FK_Kullanicilar_KullaniciSeviyeleri">
+      <End Role="KullaniciSeviyeleri" EntitySet="KullaniciSeviyeleri" />
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KullaniciProfili_Kullanicilar_KullaniciİD" Association="Self.FK_KullaniciProfili_Kullanicilar_KullaniciİD">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="KullaniciProfili" EntitySet="KullaniciProfili" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KullaniciProfili_Resimler" Association="Self.FK_KullaniciProfili_Resimler">
+      <End Role="Resimler" EntitySet="Resimler" />
+      <End Role="KullaniciProfili" EntitySet="KullaniciProfili" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KullaniciSeviyeleri_Resimler" Association="Self.FK_KullaniciSeviyeleri_Resimler">
+      <End Role="Resimler" EntitySet="Resimler" />
+      <End Role="KullaniciSeviyeleri" EntitySet="KullaniciSeviyeleri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kurslar_Diller" Association="Self.FK_Kurslar_Diller">
+      <End Role="Diller" EntitySet="Diller" />
+      <End Role="Kurslar" EntitySet="Kurslar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kurslar_Konular" Association="Self.FK_Kurslar_Konular">
+      <End Role="Konular" EntitySet="Konular" />
+      <End Role="Kurslar" EntitySet="Kurslar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kurslar_Resimler" Association="Self.FK_Kurslar_Resimler">
+      <End Role="Resimler" EntitySet="Resimler" />
+      <End Role="Kurslar" EntitySet="Kurslar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjeOdevTakip_Kullanicilar" Association="Self.FK_ProjeOdevTakip_Kullanicilar">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="ProjeOdevTakip" EntitySet="ProjeOdevTakip" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjeOdevTakip_Kurslar" Association="Self.FK_ProjeOdevTakip_Kurslar">
+      <End Role="Kurslar" EntitySet="Kurslar" />
+      <End Role="ProjeOdevTakip" EntitySet="ProjeOdevTakip" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Referanslar_Diller" Association="Self.FK_Referanslar_Diller">
+      <End Role="Diller" EntitySet="Diller" />
+      <End Role="Referanslar" EntitySet="Referanslar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Referanslar_Resimler" Association="Self.FK_Referanslar_Resimler">
+      <End Role="Resimler" EntitySet="Resimler" />
+      <End Role="Referanslar" EntitySet="Referanslar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sayac_Kaynaklar1" Association="Self.FK_Sayac_Kaynaklar1">
+      <End Role="Kaynaklar" EntitySet="Kaynaklar" />
+      <End Role="Sayac" EntitySet="Sayac" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sektorler_Diller" Association="Self.FK_Sektorler_Diller">
+      <End Role="Diller" EntitySet="Diller" />
+      <End Role="Sektorler" EntitySet="Sektorler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sektorler_Resimler" Association="Self.FK_Sektorler_Resimler">
+      <End Role="Resimler" EntitySet="Resimler" />
+      <End Role="Sektorler" EntitySet="Sektorler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sertifikalar_Kullanicilar" Association="Self.FK_Sertifikalar_Kullanicilar">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="Sertifikalar" EntitySet="Sertifikalar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sertifikalar_Resimler" Association="Self.FK_Sertifikalar_Resimler">
+      <End Role="Resimler" EntitySet="Resimler" />
+      <End Role="Sertifikalar" EntitySet="Sertifikalar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SoruCevap_Diller" Association="Self.FK_SoruCevap_Diller">
+      <End Role="Diller" EntitySet="Diller" />
+      <End Role="SoruCevap" EntitySet="SoruCevap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yoneticiler_Resimler" Association="Self.FK_Yoneticiler_Resimler">
+      <End Role="Resimler" EntitySet="Resimler" />
+      <End Role="Yoneticiler" EntitySet="Yoneticiler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yorumlar_Kullanicilar_Yorumlar" Association="Self.FK_Yorumlar_Kullanicilar_Yorumlar">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="Yorumlar" EntitySet="Yorumlar" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

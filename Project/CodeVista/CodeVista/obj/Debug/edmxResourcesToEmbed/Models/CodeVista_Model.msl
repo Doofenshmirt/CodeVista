@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CodeVistaModelStoreContainer" CdmEntityContainer="CodeVistaEntities">
+    <EntitySetMapping Name="APİEntegrasyon">
+      <EntityTypeMapping TypeName="CodeVistaModel.APİEntegrasyon">
+        <MappingFragment StoreEntitySet="APİEntegrasyon">
+          <ScalarProperty Name="APİİstekİD" ColumnName="APİİstekİD" />
+          <ScalarProperty Name="APİAdi" ColumnName="APİAdi" />
+          <ScalarProperty Name="İstekTuru" ColumnName="İstekTuru" />
+          <ScalarProperty Name="İstekParametreleri" ColumnName="İstekParametreleri" />
+          <ScalarProperty Name="İstekZamani" ColumnName="İstekZamani" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Basarilar">
+      <EntityTypeMapping TypeName="CodeVistaModel.Basarilar">
+        <MappingFragment StoreEntitySet="Basarilar">
+          <ScalarProperty Name="BasariİD" ColumnName="BasariİD" />
+          <ScalarProperty Name="KullaniciİD" ColumnName="KullaniciİD" />
+          <ScalarProperty Name="SertifikaİD" ColumnName="SertifikaİD" />
+          <ScalarProperty Name="BasariTarihi" ColumnName="BasariTarihi" />
+          <ScalarProperty Name="Açıklama" ColumnName="Açıklama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bloglar">
+      <EntityTypeMapping TypeName="CodeVistaModel.Bloglar">
+        <MappingFragment StoreEntitySet="Bloglar">
+          <ScalarProperty Name="BlogİD" ColumnName="BlogİD" />
+          <ScalarProperty Name="KullaniciİD" ColumnName="KullaniciİD" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="İcerik" ColumnName="İcerik" />
+          <ScalarProperty Name="YayinlanmaTarihi" ColumnName="YayinlanmaTarihi" />
+          <ScalarProperty Name="Etiketler" ColumnName="Etiketler" />
+          <ScalarProperty Name="ResimID" ColumnName="ResimID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CalismaGruplari">
+      <EntityTypeMapping TypeName="CodeVistaModel.CalismaGruplari">
+        <MappingFragment StoreEntitySet="CalismaGruplari">
+          <ScalarProperty Name="GrupİD" ColumnName="GrupİD" />
+          <ScalarProperty Name="GrupAdi" ColumnName="GrupAdi" />
+          <ScalarProperty Name="KonuİD" ColumnName="KonuİD" />
+          <ScalarProperty Name="DilİD" ColumnName="DilİD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DilKonulari">
+      <EntityTypeMapping TypeName="CodeVistaModel.DilKonulari">
+        <MappingFragment StoreEntitySet="DilKonulari">
+          <ScalarProperty Name="DilİD" ColumnName="DilİD" />
+          <ScalarProperty Name="KonuİD" ColumnName="KonuİD" />
+          <ScalarProperty Name="DilAdi" ColumnName="DilAdi" />
+          <ScalarProperty Name="KullanimAlani" ColumnName="KullanimAlani" />
+          <ScalarProperty Name="SektorİD" ColumnName="SektorİD" />
+          <ScalarProperty Name="Amac" ColumnName="Amac" />
+          <ScalarProperty Name="PopulerlikDerecesi" ColumnName="PopulerlikDerecesi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diller">
+      <EntityTypeMapping TypeName="CodeVistaModel.Diller">
+        <MappingFragment StoreEntitySet="Diller">
+          <ScalarProperty Name="DilİD" ColumnName="DilİD" />
+          <ScalarProperty Name="DilAdi" ColumnName="DilAdi" />
+          <ScalarProperty Name="DilTipi" ColumnName="DilTipi" />
+          <ScalarProperty Name="SektorİD" ColumnName="SektorİD" />
+          <ScalarProperty Name="ResimID" ColumnName="ResimID" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EgitimKaynaklari">
+      <EntityTypeMapping TypeName="CodeVistaModel.EgitimKaynaklari">
+        <MappingFragment StoreEntitySet="EgitimKaynaklari">
+          <ScalarProperty Name="KaynakİD" ColumnName="KaynakİD" />
+          <ScalarProperty Name="KaynakAdi" ColumnName="KaynakAdi" />
+          <ScalarProperty Name="KategoriİD" ColumnName="KategoriİD" />
+          <ScalarProperty Name="DilİD" ColumnName="DilİD" />
+          <ScalarProperty Name="Seviye" ColumnName="Seviye" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="İndirimKuponlari">
+      <EntityTypeMapping TypeName="CodeVistaModel.İndirimKuponlari">
+        <MappingFragment StoreEntitySet="İndirimKuponlari">
+          <ScalarProperty Name="KuponİD" ColumnName="KuponİD" />
+          <ScalarProperty Name="KuponKodu" ColumnName="KuponKodu" />
+          <ScalarProperty Name="İndirimYuzdesi" ColumnName="İndirimYuzdesi" />
+          <ScalarProperty Name="SonKullanmaTarihi" ColumnName="SonKullanmaTarihi" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="ResimID" ColumnName="ResimID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kategoriler">
+      <EntityTypeMapping TypeName="CodeVistaModel.Kategoriler">
+        <MappingFragment StoreEntitySet="Kategoriler">
+          <ScalarProperty Name="KategoriİD" ColumnName="KategoriİD" />
+          <ScalarProperty Name="KategoriAdi" ColumnName="KategoriAdi" />
+          <ScalarProperty Name="AnaKategoriİD" ColumnName="AnaKategoriİD" />
+          <ScalarProperty Name="ResimID" ColumnName="ResimID" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kaynaklar">
+      <EntityTypeMapping TypeName="CodeVistaModel.Kaynaklar">
+        <MappingFragment StoreEntitySet="Kaynaklar">
+          <ScalarProperty Name="KaynakİD" ColumnName="KaynakİD" />
+          <ScalarProperty Name="KaynakAdi" ColumnName="KaynakAdi" />
+          <ScalarProperty Name="KaynakTipi" ColumnName="KaynakTipi" />
+          <ScalarProperty Name="KursİD" ColumnName="KursİD" />
+          <ScalarProperty Name="SeviyeİD" ColumnName="SeviyeİD" />
+          <ScalarProperty Name="ResimID" ColumnName="ResimID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Konular">
+      <EntityTypeMapping TypeName="CodeVistaModel.Konular">
+        <MappingFragment StoreEntitySet="Konular">
+          <ScalarProperty Name="KonuİD" ColumnName="KonuİD" />
+          <ScalarProperty Name="KonuAdi" ColumnName="KonuAdi" />
+          <ScalarProperty Name="KonuAciklama" ColumnName="KonuAciklama" />
+          <ScalarProperty Name="KonuTipi" ColumnName="KonuTipi" />
+          <ScalarProperty Name="ResimID" ColumnName="ResimID" />
+          <ScalarProperty Name="SektorID" ColumnName="SektorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KullaniciEtkilesimleri">
+      <EntityTypeMapping TypeName="CodeVistaModel.KullaniciEtkilesimleri">
+        <MappingFragment StoreEntitySet="KullaniciEtkilesimleri">
+          <ScalarProperty Name="EtkilesimİD" ColumnName="EtkilesimİD" />
+          <ScalarProperty Name="KullaniciİD" ColumnName="KullaniciİD" />
+          <ScalarProperty Name="KaynakİD" ColumnName="KaynakİD" />
+          <ScalarProperty Name="EtkilesimTipi" ColumnName="EtkilesimTipi" />
+          <ScalarProperty Name="ZamanDamgasi" ColumnName="ZamanDamgasi" />
+          <ScalarProperty Name="GeriBildirim" ColumnName="GeriBildirim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KullaniciFavorileri">
+      <EntityTypeMapping TypeName="CodeVistaModel.KullaniciFavorileri">
+        <MappingFragment StoreEntitySet="KullaniciFavorileri">
+          <ScalarProperty Name="FavoriİD" ColumnName="FavoriİD" />
+          <ScalarProperty Name="KullaniciİD" ColumnName="KullaniciİD" />
+          <ScalarProperty Name="KaynakİD" ColumnName="KaynakİD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KullaniciGeriBildirimleri">
+      <EntityTypeMapping TypeName="CodeVistaModel.KullaniciGeriBildirimleri">
+        <MappingFragment StoreEntitySet="KullaniciGeriBildirimleri">
+          <ScalarProperty Name="GeriBildirimİD" ColumnName="GeriBildirimİD" />
+          <ScalarProperty Name="KullaniciİD" ColumnName="KullaniciİD" />
+          <ScalarProperty Name="GeriBildirimTuru" ColumnName="GeriBildirimTuru" />
+          <ScalarProperty Name="GeriBildirimİcerigi" ColumnName="GeriBildirimİcerigi" />
+          <ScalarProperty Name="GeriBildirimZamani" ColumnName="GeriBildirimZamani" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullaniciİstatistikleri">
+      <EntityTypeMapping TypeName="CodeVistaModel.Kullaniciİstatistikleri">
+        <MappingFragment StoreEntitySet="Kullaniciİstatistikleri">
+          <ScalarProperty Name="İstatistikİD" ColumnName="İstatistikİD" />
+          <ScalarProperty Name="KullaniciİD" ColumnName="KullaniciİD" />
+          <ScalarProperty Name="DilİD" ColumnName="DilİD" />
+          <ScalarProperty Name="KonuİD" ColumnName="KonuİD" />
+          <ScalarProperty Name="SeviyeİD" ColumnName="SeviyeİD" />
+          <ScalarProperty Name="İlerlemeYuzdesi" ColumnName="İlerlemeYuzdesi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanicilar">
+      <EntityTypeMapping TypeName="CodeVistaModel.Kullanicilar">
+        <MappingFragment StoreEntitySet="Kullanicilar">
+          <ScalarProperty Name="KullaniciİD" ColumnName="KullaniciİD" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="HashlenmisSifre" ColumnName="HashlenmisSifre" />
+          <ScalarProperty Name="SeviyeİD" ColumnName="SeviyeİD" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="KullaniciRolu" ColumnName="KullaniciRolu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KullaniciProfili">
+      <EntityTypeMapping TypeName="CodeVistaModel.KullaniciProfili">
+        <MappingFragment StoreEntitySet="KullaniciProfili">
+          <ScalarProperty Name="KullaniciİD" ColumnName="KullaniciİD" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="TercihEdilenDil" ColumnName="TercihEdilenDil" />
+          <ScalarProperty Name="ProfilResmiURL" ColumnName="ProfilResmiURL" />
+          <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+          <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+          <ScalarProperty Name="Ulke" ColumnName="Ulke" />
+          <ScalarProperty Name="Sehir" ColumnName="Sehir" />
+          <ScalarProperty Name="İlgiAlanlari" ColumnName="İlgiAlanlari" />
+          <ScalarProperty Name="KullaniciRolu" ColumnName="KullaniciRolu" />
+          <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+          <ScalarProperty Name="SonGirisTarihi" ColumnName="SonGirisTarihi" />
+          <ScalarProperty Name="ProfilTamamlamaDurumu" ColumnName="ProfilTamamlamaDurumu" />
+          <ScalarProperty Name="SosyelMedyaHesaplari" ColumnName="SosyelMedyaHesaplari" />
+          <ScalarProperty Name="İletisimBilgileri" ColumnName="İletisimBilgileri" />
+          <ScalarProperty Name="OdemeBilgileri" ColumnName="OdemeBilgileri" />
+          <ScalarProperty Name="SeviyeİD" ColumnName="SeviyeİD" />
+          <ScalarProperty Name="ResimID" ColumnName="ResimID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KullaniciSeviyeleri">
+      <EntityTypeMapping TypeName="CodeVistaModel.KullaniciSeviyeleri">
+        <MappingFragment StoreEntitySet="KullaniciSeviyeleri">
+          <ScalarProperty Name="SeviyeİD" ColumnName="SeviyeİD" />
+          <ScalarProperty Name="SeviyeAdi" ColumnName="SeviyeAdi" />
+          <ScalarProperty Name="SeviyeAciklama" ColumnName="SeviyeAciklama" />
+          <ScalarProperty Name="ResimID" ColumnName="ResimID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kurslar">
+      <EntityTypeMapping TypeName="CodeVistaModel.Kurslar">
+        <MappingFragment StoreEntitySet="Kurslar">
+          <ScalarProperty Name="KursİD" ColumnName="KursİD" />
+          <ScalarProperty Name="KursAdi" ColumnName="KursAdi" />
+          <ScalarProperty Name="DilİD" ColumnName="DilİD" />
+          <ScalarProperty Name="KonuİD" ColumnName="KonuİD" />
+          <ScalarProperty Name="KursSeviyesi" ColumnName="KursSeviyesi" />
+          <ScalarProperty Name="KursAciklama" ColumnName="KursAciklama" />
+          <ScalarProperty Name="ResimID" ColumnName="ResimID" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjeOdevTakip">
+      <EntityTypeMapping TypeName="CodeVistaModel.ProjeOdevTakip">
+        <MappingFragment StoreEntitySet="ProjeOdevTakip">
+          <ScalarProperty Name="ProjeOdevİD" ColumnName="ProjeOdevİD" />
+          <ScalarProperty Name="KullaniciİD" ColumnName="KullaniciİD" />
+          <ScalarProperty Name="KursİD" ColumnName="KursİD" />
+          <ScalarProperty Name="SonTarih" ColumnName="SonTarih" />
+          <ScalarProperty Name="İlerlemeYuzdesi" ColumnName="İlerlemeYuzdesi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Referanslar">
+      <EntityTypeMapping TypeName="CodeVistaModel.Referanslar">
+        <MappingFragment StoreEntitySet="Referanslar">
+          <ScalarProperty Name="ReferansİD" ColumnName="ReferansİD" />
+          <ScalarProperty Name="ReferansAdi" ColumnName="ReferansAdi" />
+          <ScalarProperty Name="ReferansTipi" ColumnName="ReferansTipi" />
+          <ScalarProperty Name="DilİD" ColumnName="DilİD" />
+          <ScalarProperty Name="ResimID" ColumnName="ResimID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resimler">
+      <EntityTypeMapping TypeName="CodeVistaModel.Resimler">
+        <MappingFragment StoreEntitySet="Resimler">
+          <ScalarProperty Name="ResimID" ColumnName="ResimID" />
+          <ScalarProperty Name="Yol" ColumnName="Yol" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Boyut" ColumnName="Boyut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sektorler">
+      <EntityTypeMapping TypeName="CodeVistaModel.Sektorler">
+        <MappingFragment StoreEntitySet="Sektorler">
+          <ScalarProperty Name="SektorID" ColumnName="SektorID" />
+          <ScalarProperty Name="SektorAdi" ColumnName="SektorAdi" />
+          <ScalarProperty Name="PopulerYazilimDiliİD" ColumnName="PopulerYazilimDiliİD" />
+          <ScalarProperty Name="ResimID" ColumnName="ResimID" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sertifikalar">
+      <EntityTypeMapping TypeName="CodeVistaModel.Sertifikalar">
+        <MappingFragment StoreEntitySet="Sertifikalar">
+          <ScalarProperty Name="SertifikaİD" ColumnName="SertifikaİD" />
+          <ScalarProperty Name="SertifikaAdi" ColumnName="SertifikaAdi" />
+          <ScalarProperty Name="VerenKurulus" ColumnName="VerenKurulus" />
+          <ScalarProperty Name="VerilisTarihi" ColumnName="VerilisTarihi" />
+          <ScalarProperty Name="KullaniciİD" ColumnName="KullaniciİD" />
+          <ScalarProperty Name="ResimID" ColumnName="ResimID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SoruCevap">
+      <EntityTypeMapping TypeName="CodeVistaModel.SoruCevap">
+        <MappingFragment StoreEntitySet="SoruCevap">
+          <ScalarProperty Name="SoruCevapİD" ColumnName="SoruCevapİD" />
+          <ScalarProperty Name="Soru" ColumnName="Soru" />
+          <ScalarProperty Name="Cevap" ColumnName="Cevap" />
+          <ScalarProperty Name="DilİD" ColumnName="DilİD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yoneticiler">
+      <EntityTypeMapping TypeName="CodeVistaModel.Yoneticiler">
+        <MappingFragment StoreEntitySet="Yoneticiler">
+          <ScalarProperty Name="YoneticiİD" ColumnName="YoneticiİD" />
+          <ScalarProperty Name="YoneticiAdi" ColumnName="YoneticiAdi" />
+          <ScalarProperty Name="YoneticiEmail" ColumnName="YoneticiEmail" />
+          <ScalarProperty Name="YoneticiSifreHash" ColumnName="YoneticiSifreHash" />
+          <ScalarProperty Name="ResimID" ColumnName="ResimID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yorumlar">
+      <EntityTypeMapping TypeName="CodeVistaModel.Yorumlar">
+        <MappingFragment StoreEntitySet="Yorumlar">
+          <ScalarProperty Name="YorumİD" ColumnName="YorumİD" />
+          <ScalarProperty Name="KullaniciİD" ColumnName="KullaniciİD" />
+          <ScalarProperty Name="KaynakİD" ColumnName="KaynakİD" />
+          <ScalarProperty Name="YorumMetni" ColumnName="YorumMetni" />
+          <ScalarProperty Name="ZamanDamgasi" ColumnName="ZamanDamgasi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sayac">
+      <EntityTypeMapping TypeName="CodeVistaModel.Sayac">
+        <MappingFragment StoreEntitySet="Sayac">
+          <ScalarProperty Name="SayacİD" ColumnName="SayacİD" />
+          <ScalarProperty Name="BakilanSayi" ColumnName="BakilanSayi" />
+          <ScalarProperty Name="KaynakID" ColumnName="KaynakID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

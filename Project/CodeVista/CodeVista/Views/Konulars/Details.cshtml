@@ -1,0 +1,45 @@
+﻿@model CodeVista.Models.Konular
+@Scripts.Render("~/Layout/jquery")
+@Styles.Render("~/Layout/css")
+<div>
+    <h4>Konular</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KonuAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KonuAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KonuAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KonuAciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KonuTipi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KonuTipi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resimler.Yol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resimler.Yol)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.KonuİD }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

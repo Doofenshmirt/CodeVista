@@ -1,0 +1,62 @@
+﻿@model IEnumerable<CodeVista.Models.Sektorler>
+@Scripts.Render("~/Layout/jquery")
+@Styles.Render("~/Layout/css")
+<div class="services_section margin_top90">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="studies_taital">Yazılım Sektörleri</h1>
+            </div>
+        </div>
+    </div>
+    <div class="services_section_2">
+        <div id="main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                @{
+                    var index = 0;// Slayt indexini başlatır
+                    var totalItems = Model.Count();// Modeldeki toplam öğe sayısını alır
+                    var itemsPerSlide = 3;// Her slaytta gösterilecek öğe sayısını belirler
+                                          //"Genellikle slaytta kaç öğenin görüntüleneceğini belirtmek için kullanılır. Örneğin, bir carousel slaytında kaç resmin veya içeriğin slayt başına gösterileceğini belirtmek için kullanılabilir.
+                    var totalSlides = (int)Math.Ceiling((double)totalItems / itemsPerSlide); // Toplam slayt sayısını hesaplar "Ceilings"en yakın tam sayıya yukarıya doğru yuvarlar
+                    for (int i = 0; i < totalSlides; i++)// Her slayt için bir döngü oluşturur
+                    {
+                        <div class="carousel-item @(i == 0 ? "active" : "")">
+                            <!-- Aktif slaytın belirlendiği div -->
+                            <div class="container">
+                                <div class="row">
+                                    @for (int j = 0; j < itemsPerSlide; j++)// Her slaytta gösterilecek öğeler için bir döngü oluşturur
+                                    {
+                                        var itemIndex = (i * itemsPerSlide) + j;// Öğenin Model koleksiyonundaki indexini hesaplar
+                                        if (itemIndex < totalItems)// Model koleksiyonunun sonuna ulaşmadıysa devam eder
+                                        {
+                                            var item = Model.ElementAt(itemIndex);// Model koleksiyonundan ilgili öğeyi alır
+                                            <div class="col-md-4">
+                                                <!-- Her öğe için bir kolon oluşturur -->
+                                                <div class="service_box">
+                                                    <div class="house_icon">
+                                                        <img src="~/images/@item.resim" alt="Resim Yok" style="max-width: 100%; max-height: 100%; width: 350px; height: 350px;" class="image_1">
+                                                        <img src="~/images/@item.resim" alt="Resim Yok" style="max-width: 100%; max-height: 100%; width: 350px; height: 350px;" class="image_2">
+                                                    </div>
+                                                    <h3 class="corporate_text">@item.SektorAdi</h3> <!-- Öğenin adını ekrana yazdırır -->
+                                                    <div class="readmore_button"><a href="@Url.Action("Index", "Konulars", new { sektorId = item.SektorID, img = item.resim })">Devamı</a></div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        index++;// Slayt indexini artırır
+                    }
+                }
+            </div>
+            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+                <i class="fa fa-arrow-left"></i><!-- Önceki slayta gitmek için sol yön oku -->
+            </a>
+            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+                <i class="fa fa-arrow-right"></i><!-- Sonraki slayta gitmek için sağ yön oku -->
+            </a>
+        </div>
+    </div>
+</div>
+

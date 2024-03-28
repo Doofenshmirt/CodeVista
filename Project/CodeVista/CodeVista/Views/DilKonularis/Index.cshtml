@@ -1,0 +1,26 @@
+﻿@model IEnumerable<CodeVista.Models.DilKonulari>
+@Scripts.Render("~/Layout/jquery")
+@Styles.Render("~/Layout/css")
+<div class="news_section layout_padding">
+    <div class="container">
+        <h1 class="news_taital" style="font-size: 32px; font-weight: bold; margin-bottom: 20px;">Dil Konuları</h1>
+        <div class="news_section_2">
+            <!-- Dil konularının listesi döngü ile oluşturulur -->
+            @foreach (var item in Model)
+            {
+                <div class="news_box" style="margin-bottom: 20px; padding: 20px; border: 1px solid #ddd;">
+                    <div class="news_img">
+                        <!-- Dilin resmi gösterilir -->
+                        <img src="~/images/@item.Diller.resim" style="max-width: 100%; max-height: 100%; width: 350px; height: 300px;">
+                    </div>
+                    <h2 class="does_taital" style="margin-top: 10px;">@Html.DisplayFor(modelItem => item.Konular.KonuAdi)</h2>
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li style="margin-top: 5px;"><strong>Amaç:</strong> @Html.DisplayFor(modelItem => item.Amac)</li>
+                        <li><strong>Konu Tipi:</strong> @Html.DisplayFor(modelItem => item.Konular.KonuTipi)</li>
+                        <li><strong>Konu Açıklama:</strong> @Html.DisplayFor(modelItem => item.Konular.KonuAciklama)</li>
+                    </ul>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,162 @@
+﻿@model CodeVista.Models.KullaniciProfili
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KullaniciProfili</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TercihEdilenDil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TercihEdilenDil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfilResmiURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProfilResmiURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cinsiyet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cinsiyet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DogumTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DogumTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ulke)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ulke)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sehir)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sehir)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.İlgiAlanlari)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.İlgiAlanlari)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KullaniciRolu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KullaniciRolu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KayitTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KayitTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SonGirisTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SonGirisTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfilTamamlamaDurumu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProfilTamamlamaDurumu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SosyelMedyaHesaplari)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SosyelMedyaHesaplari)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.İletisimBilgileri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.İletisimBilgileri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OdemeBilgileri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OdemeBilgileri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeviyeİD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeviyeİD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kullanicilar.KullaniciAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kullanicilar.KullaniciAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resimler.Yol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resimler.Yol)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.KullaniciAdi }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

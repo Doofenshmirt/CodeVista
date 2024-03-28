@@ -1,0 +1,69 @@
+﻿@model IEnumerable<CodeVista.Models.Kullanicilar>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KullaniciAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HashlenmisSifre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Soyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KullaniciRolu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KullaniciSeviyeleri.SeviyeAdi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KullaniciAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HashlenmisSifre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KullaniciRolu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KullaniciSeviyeleri.SeviyeAdi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.KullaniciİD }) |
+            @Html.ActionLink("Details", "Details", new { id=item.KullaniciİD }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.KullaniciİD })
+        </td>
+    </tr>
+}
+
+</table>
